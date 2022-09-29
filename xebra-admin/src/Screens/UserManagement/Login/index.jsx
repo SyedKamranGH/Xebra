@@ -1,229 +1,151 @@
 import React from "react";
+import { Button, Paper } from "@mui/material";
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
+
+import image1 from "../../../assets/1.jpg";
+import image2 from "../../../assets/2.jpg";
+import image3 from "../../../assets/3.jpg";
+import image4 from "../../../assets/4.jpg";
+import image5 from "../../../assets/5.jpg";
+import InputField from "../../../Components/Shared/InputField";
+import ImageSlider from "../../../Components/Shared/ImageSlider";
+
+import "./style.css";
+import { CheckBox } from "@mui/icons-material";
+// import Button from "../../../Components/Shared/Button";
 
 const Login = () => {
+	const initialValues = {
+		email: "",
+		password: "",
+	};
+	const validationSchema = Yup.object({
+		email: Yup.string().required("Email Required"),
+	});
+
 	return (
-		<div className="login">
-			{/* BEGIN LOGO */}
-			<div className="logo">
-				<a href="index.html">
-					<img src="images/SGI_LOGO.png" alt />
-				</a>
+		<>
+			<div className="containerStyle">
+				<ImageSlider images={[image1, image2, image3, image4, image5]}>
+					{/* BEGIN LOGO */}
+					<div className="logo">
+						<a href="index.html">
+							<img src="images/SGI_LOGO.png" alt />
+						</a>
+					</div>
+					{/* END LOGO */}
+					<Paper
+						elevation={3}
+						variant="elevation"
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "center",
+							color: "white",
+							// backgroundColor: "rgba(0, 0, 0, 0.128)",
+							backgroundColor: "rgba(99, 95, 95, 0.317)",
+						}}
+						sx={{ minWidth: "300px", maxWidth: "450px" }}>
+						{/* BEGIN LOGIN */}
+						<div className="content">
+							{/* BEGIN LOGIN FORM */}
+							{/* <form id="login-form" className="login-form"> */}
+							{/* <InputField /> */}
+							{/*ie8, ie9 does not support html5 placeholder, so we just show field title for that*/}
+							{/* </form> */}
+							{/* END LOGIN FORM */}
+
+							{/* Begin Formik Login Form */}
+							<Formik
+								initialValues={initialValues}
+								validationSchema={validationSchema}
+								onSubmit={(values) => console.log(values)}>
+								{(formik) => {
+									return (
+										<Form
+										// id="login-form" className="login-form"
+										>
+											<h3 className="form-title">Login to your account</h3>
+											<div
+												id="login-form-error"
+												className="alert alert-danger display-hide">
+												<button className="close" data-close="alert" />
+												<span>
+													Invalid Email or Password. Please try again.{" "}
+												</span>
+											</div>
+											<div
+												id="login-form--disabled-error"
+												className="alert alert-danger display-hide">
+												<button className="close" data-close="alert" />
+												<span>
+													User account disabled. Please contact customer
+													support.{" "}
+												</span>
+											</div>
+											<InputField
+												name="email"
+												type="email"
+												label="Email"
+												autoComplete="off"
+												placeholder="Email"
+												id="email-input-login"
+												className="form-control placeholder-no-fix">
+												<i className="fa fa-user" />
+											</InputField>
+											<InputField
+												name="password"
+												type="password"
+												label="Password"
+												autoComplete="off"
+												placeholder="Password"
+												id="password-input-login"
+												className="form-control placeholder-no-fix">
+												<i className="fa fa-lock" />
+											</InputField>
+											<div className="form-actions">
+												<label className="rememberme mt-checkbox mt-checkbox-outline">
+													<input
+														type="checkbox"
+														name="remember"
+														defaultValue={1}
+													/>
+													Remember me
+													<span />
+												</label>
+												<Button
+													// id="submit-btn"
+													type="submit"
+													variant="contained"
+													size="large"
+													className="btn green pull-right"
+													sx={{ fontSize: "12px" }}>
+													Submit
+												</Button>
+											</div>
+										</Form>
+									);
+								}}
+							</Formik>
+							{/* End Formik Login Form */}
+							<div className="forget-password">
+								<h4>Forgot your password ?</h4>
+								<p>
+									Click
+									<a href="javascript:;" id="forget-password">
+										{" "}
+										here{" "}
+									</a>{" "}
+									to reset your password.
+								</p>
+							</div>
+						</div>
+						{/* END LOGIN */}
+					</Paper>
+				</ImageSlider>
 			</div>
-			{/* END LOGO */}
-			{/* BEGIN LOGIN */}
-			<div className="content">
-				{/* BEGIN LOGIN FORM */}
-				<form id="login-form" className="login-form">
-					<h3 className="form-title">Login to your account</h3>
-					<div
-						id="login-form-error"
-						className="alert alert-danger display-hide">
-						<button className="close" data-close="alert" />
-						<span> Invalid Email or Password. Please try again. </span>
-					</div>
-					<div
-						id="login-form--disabled-error"
-						className="alert alert-danger display-hide">
-						<button className="close" data-close="alert" />
-						<span>
-							{" "}
-							User account disabled. Please contact customer support.{" "}
-						</span>
-					</div>
-					<div className="form-group">
-						{/*ie8, ie9 does not support html5 placeholder, so we just show field title for that*/}
-						<label className="control-label visible-ie8 visible-ie9">
-							Email
-						</label>
-						<div className="input-icon">
-							<i className="fa fa-user" />
-							<input
-								id="email-input-login"
-								className="form-control placeholder-no-fix"
-								type="email"
-								autoComplete="off"
-								placeholder="Email"
-								name="email"
-							/>
-						</div>
-					</div>
-					<div className="form-group">
-						<label className="control-label visible-ie8 visible-ie9">
-							Password
-						</label>
-						<div className="input-icon">
-							<i className="fa fa-lock" />
-							<input
-								id="password-input-login"
-								className="form-control placeholder-no-fix"
-								type="password"
-								autoComplete="off"
-								placeholder="Password"
-								name="password"
-							/>
-						</div>
-					</div>
-					<div className="form-actions">
-						<label className="rememberme mt-checkbox mt-checkbox-outline">
-							<input type="checkbox" name="remember" defaultValue={1} />{" "}
-							Remember me
-							<span />
-						</label>
-						<input
-							id="submit-btn"
-							type="submit"
-							className="btn green pull-right"
-							defaultValue="Login"
-						/>
-					</div>
-					<div className="forget-password">
-						<h4>Forgot your password ?</h4>
-						<p>
-							Click
-							<a href="javascript:;" id="forget-password">
-								{" "}
-								here{" "}
-							</a>{" "}
-							to reset your password.
-						</p>
-					</div>
-				</form>
-				{/* END LOGIN FORM */}
-				{/* BEGIN FORGOT PASSWORD FORM */}
-				<form id="forget-form" className="forget-form">
-					<h3>Forget Password ?</h3>
-					<p> Enter your e-mail address below to reset your password. </p>
-					<div className="form-group">
-						<div className="input-icon">
-							<i className="fa fa-envelope" />
-							<input
-								id="email-input-forget"
-								className="form-control placeholder-no-fix"
-								type="email"
-								autoComplete="off"
-								placeholder="Email"
-								name="email"
-							/>
-						</div>
-					</div>
-					<div className="form-actions">
-						<button type="button" id="back-btn" className="btn red btn-outline">
-							Back{" "}
-						</button>
-						<button
-							id="forgot-btn"
-							type="submit"
-							className="btn green pull-right">
-							{" "}
-							Submit{" "}
-						</button>
-					</div>
-				</form>
-				{/* END FORGOT PASSWORD FORM */}
-				{/* BEGIN FORGOT VERIFY PASSWORD FORM */}
-				<form
-					id="forget-verify-form"
-					className="forget-form"
-					action="index.html"
-					method="post">
-					<h3>Confirmation Code and New Password.</h3>
-					<p> Enter your confirmation code and enter your new password.</p>
-					<div className="form-group">
-						<div className="input-icon">
-							<i className="fa fa-envelope" />
-							<input
-								id="code-input-forgot-verify"
-								className="form-control placeholder-no-fix"
-								type="text"
-								autoComplete="off"
-								placeholder="Verification Code"
-								name="verificationCode"
-							/>
-						</div>
-					</div>
-					<div className="form-group">
-						<div className="input-icon">
-							<i className="fa fa-lock" />
-							<input
-								id="password-input-forgot-verify"
-								className="form-control placeholder-no-fix"
-								type="password"
-								autoComplete="off"
-								placeholder="New Password"
-								name="newChangePassword"
-							/>
-						</div>
-					</div>
-					<div className="form-actions">
-						<button
-							type="button"
-							id="back-verify-btn"
-							className="btn red btn-outline">
-							Back{" "}
-						</button>
-						<button
-							id="forgot-verify-btn"
-							type="submit"
-							className="btn green pull-right">
-							{" "}
-							Submit{" "}
-						</button>
-					</div>
-				</form>
-				{/* END FORGOT VERIFY PASSWORD FORM */}
-				{/* BEGIN CHANGE PASSWORD FORM */}
-				<form id="change-password-form" className="login-form">
-					<h3 className="form-title">Create new password.</h3>
-					<div
-						id="change-password-form-error"
-						className="alert alert-danger display-hide">
-						<button className="close" data-close="alert" />
-						<span> Invalid input passwords. </span>
-					</div>
-					<div className="form-group">
-						{/*ie8, ie9 does not support html5 placeholder, so we just show field title for that*/}
-						<label className="control-label visible-ie8 visible-ie9">
-							New Password
-						</label>
-						<div className="input-icon">
-							<i className="fa fa-key" />
-							<input
-								id="change-password1"
-								className="form-control "
-								type="password"
-								placeholder="New Password"
-								name="change-password1"
-							/>
-						</div>
-					</div>
-					<div className="form-group">
-						<label className="control-label visible-ie8 visible-ie9">
-							Confirm Password
-						</label>
-						<div className="input-icon">
-							<i className="fa fa-key" />
-							<input
-								id="change-password2"
-								className="form-control "
-								type="password"
-								placeholder="Confirm Password"
-								name="change-password2"
-							/>
-						</div>
-					</div>
-					<div className="form-actions">
-						<input
-							id="change-password-form-submit-btn"
-							type="submit"
-							className="btn green pull-right"
-							defaultValue="Change Password"
-						/>
-					</div>
-				</form>
-				{/* END CHANGE PASSWORD FORM */}
-			</div>
-			{/* END LOGIN */}
-		</div>
+		</>
 	);
 };
 
