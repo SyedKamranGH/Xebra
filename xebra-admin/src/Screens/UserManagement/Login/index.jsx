@@ -3,17 +3,9 @@ import { Button, Paper } from "@mui/material";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
-import image1 from "../../../assets/1.jpg";
-import image2 from "../../../assets/2.jpg";
-import image3 from "../../../assets/3.jpg";
-import image4 from "../../../assets/4.jpg";
-import image5 from "../../../assets/5.jpg";
 import InputField from "../../../Components/Shared/InputField";
-import ImageSlider from "../../../Components/Shared/ImageSlider";
 
 import "./style.css";
-import { CheckBox } from "@mui/icons-material";
-// import Button from "../../../Components/Shared/Button";
 
 const Login = () => {
 	const initialValues = {
@@ -34,19 +26,11 @@ const Login = () => {
 					flexDirection: "column",
 					alignItems: "center",
 					color: "white",
-					// backgroundColor: "rgba(0, 0, 0, 0.128)",
 					backgroundColor: "rgba(99, 95, 95, 0.317)",
 				}}
 				sx={{ minWidth: "300px", maxWidth: "450px" }}>
 				{/* BEGIN LOGIN */}
 				<div className="content">
-					{/* BEGIN LOGIN FORM */}
-					{/* <form id="login-form" className="login-form"> */}
-					{/* <InputField /> */}
-					{/*ie8, ie9 does not support html5 placeholder, so we just show field title for that*/}
-					{/* </form> */}
-					{/* END LOGIN FORM */}
-
 					{/* Begin Formik Login Form */}
 					<Formik
 						initialValues={initialValues}

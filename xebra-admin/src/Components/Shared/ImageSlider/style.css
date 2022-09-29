@@ -5,6 +5,7 @@
 	display: flex;
 	flex-wrap: nowrap;
 	overflow-x: hidden;
+	overflow-y: hidden;
 	position: relative;
 }
 
@@ -25,7 +26,7 @@
 
 .childrenWrapper {
 	position: absolute;
-	top: 20%;
+	top: 10%;
 	left: 35%;
 	transform: translate(-50, -50);
 }
