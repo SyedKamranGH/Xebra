@@ -14,6 +14,7 @@ import InputField from "../../../Components/Shared/InputField";
 import "./style.css";
 import { CheckBox } from "@mui/icons-material";
 import ImageSlider from "../../Shared/ImageSlider";
+import { Outlet } from "react-router-dom";
 
 const UserManagement = () => {
 	return (
@@ -27,6 +28,7 @@ const UserManagement = () => {
 						</a>
 					</div>
 					{/* END LOGO */}
+					<Outlet />
 				</ImageSlider>
 			</div>
 		</>
