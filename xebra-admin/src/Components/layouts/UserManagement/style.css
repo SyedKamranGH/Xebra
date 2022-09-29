@@ -1,0 +1,18 @@
+.gradient {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(99, 95, 95, 0.317);
+}
+
+.containerStyle {
+	width: 100vw;
+	height: 100vh;
+	margin: 0 auto;
+}
+
+/* .logo {
+	top: 0;
+} */
