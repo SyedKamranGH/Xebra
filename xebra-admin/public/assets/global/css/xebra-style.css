@@ -1,153 +1,156 @@
 .company-logo-default {
-    max-height: 40px;
-    margin-top: 5px
+	max-height: 40px;
+	margin-top: 5px;
 }
 
 .page-sidebar-menu.page-header-fixed {
-    padding-top: 20px
+	padding-top: 20px;
+	background-color: #364150;
+	z-index: -1;
 }
 
 .page-content {
-    padding-top: 10px
+	padding-top: 10px;
 }
 
 .page-title.sbold {
-    margin-bottom: 10px;
-    margin-top: 10px
+	margin-bottom: 10px;
+	margin-top: 10px;
 }
 
 #datatable_ajax {
-    margin-bottom: 0px
+	margin-bottom: 0px;
 }
 
 .portlet.light.portlet-fit.portlet-datatable.bordered {
-    margin-bottom: 10px
+	margin-bottom: 10px;
 }
 
 .portlet-body {
-    padding-bottom: 10px
+	padding-bottom: 10px;
 }
 
 .caption {
-    font-size: 15px;
+	font-size: 15px;
 }
 
 .modal-dialog {
-    width: 1000px;
-    height: 500px;
-    vertical-align: middle;
+	width: 1000px;
+	height: 500px;
+	vertical-align: middle;
 }
 
-.fa.fa-user, 
+.fa.fa-user,
 .fa.fa-envelope,
 .fa.fa-home,
 .fa.fa-building,
 .fa.fa-file-text-o {
-    width: 15px;
+	width: 15px;
 }
 
 .fa.fa-exchange {
-    font-size: 1em;
+	font-size: 1em;
 }
 
 .fa.fa-mobile {
-    font-size: 1.3em;
+	font-size: 1.3em;
 }
 
 .fa.fa-dollar {
-    color: #585858;
-    font-size: 0.8em;
-    width: 15px;
+	color: #585858;
+	font-size: 0.8em;
+	width: 15px;
 }
 
 .form-control {
-    font-size: 14px;
+	font-size: 14px;
 }
 
 .form-control-letter {
-    text-align: center;
-    height: 34px;
-    padding: 6px 12px;
-    background-color: #fff;
-    border: 1px solid #c2cad8;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	text-align: center;
+	height: 34px;
+	padding: 6px 12px;
+	background-color: #fff;
+	border: 1px solid #c2cad8;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out 0.15s,
+		box-shadow ease-in-out 0.15s;
+	-o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
 .form-control-money {
-    height: 34px;
-    padding: 6px 12px;
-    background-color: #fff;
-    border: 1px solid #c2cad8;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	height: 34px;
+	padding: 6px 12px;
+	background-color: #fff;
+	border: 1px solid #c2cad8;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out 0.15s,
+		box-shadow ease-in-out 0.15s;
+	-o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
 .input-group-money {
-    min-width: 200px;
-    display: table;
-    border-collapse: separate;
+	min-width: 200px;
+	display: table;
+	border-collapse: separate;
 }
 
 .signature {
-    display: inline;
+	display: inline;
 }
 
 .signature-noimage {
-    display: none;
+	display: none;
 }
 
-.limits-desc{
-    min-width: 300px;
+.limits-desc {
+	min-width: 300px;
 }
 
 .xebra-fifty {
-    width: 20px;
+	width: 20px;
 }
 
 .form-group > span {
-    width: 50%;
-    font-weight: bold;
-    border: none;
+	width: 50%;
+	font-weight: bold;
+	border: none;
 }
 
 #mobile-user-details {
-    color: dimgrey;
+	color: dimgrey;
 }
 
-#certificate_todays_date, 
-#certificate_date
- {
-    width: 100px;
-    background-color: #cce6ff;
+#certificate_todays_date,
+#certificate_date {
+	width: 100px;
+	background-color: #cce6ff;
 }
 
 #producer,
 #producer_address {
-    font-size: 14px;
-    text-align: left;
-    background-color: #cce6ff;
+	font-size: 14px;
+	text-align: left;
+	background-color: #cce6ff;
 }
 
 #contact_phone,
 #contact_fax {
-    font-size: 14px;
-    width: 200px;
-    background-color: #cce6ff;
+	font-size: 14px;
+	width: 200px;
+	background-color: #cce6ff;
 }
 
 #contact_email {
-    font-size: 14px;
-    width: 600px;
-    background-color: #cce6ff;
+	font-size: 14px;
+	width: 600px;
+	background-color: #cce6ff;
 }
 
 #insurer_a,
@@ -160,11 +163,11 @@
 #auto_liab_other1_desc,
 #gen_liab_other1_desc,
 #gen_liab_other2_desc {
-    width: 200px;
-    font-size: 14px;
-    color: #585858;
-    font-weight: normal;
-    text-align: left;
+	width: 200px;
+	font-size: 14px;
+	color: #585858;
+	font-weight: normal;
+	text-align: left;
 }
 
 #insurer_a_naic,
@@ -173,15 +176,14 @@
 #insurer_d_naic,
 #insurer_e_naic,
 #insurer_f_naic,
-#gen_liab_policy_no
-#auto_liab_policy_no,
+#gen_liab_policy_no #auto_liab_policy_no,
 #umb_liab_policy_no,
 #other_coverage_policy_no,
 #other_coverage_policy_no_b {
-    font-size: 14px;
-    color: #585858;
-    font-weight: normal;
-    text-align: center;
+	font-size: 14px;
+	color: #585858;
+	font-weight: normal;
+	text-align: center;
 }
 
 #gen_liab_insurer_letter,
@@ -197,10 +199,9 @@
 #other_coverage_insurer_letter,
 #other_coverage_additional,
 #other_coverage_subdr,
-#other_coverage_insurer_letter_b
-#other_coverage_additional_b,
+#other_coverage_insurer_letter_b #other_coverage_additional_b,
 #other_coverage_subdr_b {
-    font-size: 14px;
+	font-size: 14px;
 }
 
 #gen_liab_effective,
@@ -214,11 +215,11 @@
 #other_coverage_effective_b,
 #other_coverage_expires_b,
 .form-control.form-control-inline.date-picker {
-    width: 100px;
-    font-size: 14px;
-    color: #585858;
-    font-weight: normal;
-    text-align: center;
+	width: 100px;
+	font-size: 14px;
+	color: #585858;
+	font-weight: normal;
+	text-align: center;
 }
 
 #gen_liab_limit_occur,
@@ -239,189 +240,189 @@
 #workers_comp_limit_acc,
 #workers_comp_limit_emp,
 #workers_comp_limit_pol {
-    font-size: 14px;
-    color: #585858;
-    font-weight: normal;
-    text-align: right;
+	font-size: 14px;
+	color: #585858;
+	font-weight: normal;
+	text-align: right;
 }
 
 #gen_liab_limit_xtra_desc,
 #auto_liab_limit_xtra_desc,
 #umb_liab_limit_xtra_desc {
-    width: 225px;
-    font-size: 14px;
-    color: #585858;
-    font-weight: normal;
-    text-align: left;
+	width: 225px;
+	font-size: 14px;
+	color: #585858;
+	font-weight: normal;
+	text-align: left;
 }
 
 #umb_liab_retention_amt {
-    width: 120px;
-    font-size: 14px;
-    color: #585858;
-    font-weight: normal;
-    text-align: right;
+	width: 120px;
+	font-size: 14px;
+	color: #585858;
+	font-weight: normal;
+	text-align: right;
 }
 
 #workers_comp_excluded {
-    width: 60px;
-    font-size: 14px;
-    font-weight: normal;
+	width: 60px;
+	font-size: 14px;
+	font-weight: normal;
 }
 
 #other_coverage_desc,
 #other_coverage_limit,
 #other_coverage_desc_b,
 #other_coverage_limit_b {
-    width: 100%;
-    font-size: 14px;
-    color: #585858;
-    font-weight: normal;
-    text-align: left;
+	width: 100%;
+	font-size: 14px;
+	color: #585858;
+	font-weight: normal;
+	text-align: left;
 }
 
 #operations {
-    font-size: 13px;
-    text-align: left;
+	font-size: 13px;
+	text-align: left;
 }
 
 #cert_holder,
 #insured_address {
-    font-size: 13px;
-    text-align: left;
-    background-color: #FAFAFA;
+	font-size: 13px;
+	text-align: left;
+	background-color: #fafafa;
 }
 
 .input-icon.input-icon-sm > i {
-    color: #585858;
-    font-size: 0.8em;
-    width: 15px;
+	color: #585858;
+	font-size: 0.8em;
+	width: 15px;
 }
 
 #this_cert_number {
-    background-color: #ffdab3;
-    color: dimgrey;
-    font-size: 15px;
-    font-weight: normal;
+	background-color: #ffdab3;
+	color: dimgrey;
+	font-size: 15px;
+	font-weight: normal;
 }
 
 #this_cert_modified_by {
-    background-color: #e6f7ff;
-    color: dimgrey;
-    font-size: 15px;
-    font-weight: normal;
+	background-color: #e6f7ff;
+	color: dimgrey;
+	font-size: 15px;
+	font-weight: normal;
 }
 
 #this_cert_modified_date {
-    background-color: #e6f7ff;
-    color: dimgrey;
-    font-size: 15px;
-    font-weight: normal;
+	background-color: #e6f7ff;
+	color: dimgrey;
+	font-size: 15px;
+	font-weight: normal;
 }
 
 #certificate_number {
-    background-color: #ffffff;
+	background-color: #ffffff;
 }
 
 #mobile-user-details-view-pdf {
-    font-size: 14px;
-    color: dimgrey;
+	font-size: 14px;
+	color: dimgrey;
 }
 
 #showCertificatePDFContainer {
-    text-align: center;
+	text-align: center;
 }
 
 #showCertificatePDFIframe {
-    width: 100%;
-    height: 500px;
+	width: 100%;
+	height: 500px;
 }
 
 #showSchubergCertificatePDFContainer {
-    text-align: center;
+	text-align: center;
 }
 
 #showSchubergCertificatePDFIframe {
-    width: 100%;
-    height: 500px;
+	width: 100%;
+	height: 500px;
 }
 
 .table-gen {
-    text-align: center;
+	text-align: center;
 }
 
 .row-head {
-    background-color: lightgoldenrodyellow;
+	background-color: lightgoldenrodyellow;
 }
 
 .transaction-table-div {
-    border: 2px #f2f2f2 solid;
+	border: 2px #f2f2f2 solid;
 }
 
 .transaction-table {
-    border-spacing: 2px;
-    width: 100%;
-    border: 0px;
+	border-spacing: 2px;
+	width: 100%;
+	border: 0px;
 }
 
 .transaction-table-head-cancel {
-    padding: .75rem;
-    vertical-align: bottom;
-    border: 1px solid #dee2e6;
-    border-bottom: 2px solid #dee2e6;
-    background-color: #f8ecec;
+	padding: 0.75rem;
+	vertical-align: bottom;
+	border: 1px solid #dee2e6;
+	border-bottom: 2px solid #dee2e6;
+	background-color: #f8ecec;
 }
 
 .transaction-table-head-reinstate {
-    padding: .75rem;
-    vertical-align: bottom;
-    border: 1px solid #dee2e6;
-    border-bottom: 2px solid #dee2e6;
-    background-color: #ecf8ec;
+	padding: 0.75rem;
+	vertical-align: bottom;
+	border: 1px solid #dee2e6;
+	border-bottom: 2px solid #dee2e6;
+	background-color: #ecf8ec;
 }
 
 .transaction-table-row-div {
-    padding: .75rem;
-    vertical-align: top;
-    border: 1px solid #dee2e6;
+	padding: 0.75rem;
+	vertical-align: top;
+	border: 1px solid #dee2e6;
 }
 
 .new_cert_fixed_size {
-    width: 1640px;
+	width: 1640px;
 }
 
 .page_content_custom {
-    width: 1668px;
-    height: 3880px; 
+	width: 1668px;
+	height: 3880px;
 }
 
-.horizontal_custom_scroll{
-    overflow-x: scroll;
+.horizontal_custom_scroll {
+	overflow-x: scroll;
 }
 
 .green {
-    color: green;
+	color: green;
 }
 
 .red {
-    color: red;
+	color: red;
 }
 
 .orange {
-    color: orange;
+	color: orange;
 }
 
 .even-row {
-    background-color: #ffffff;
+	background-color: #ffffff;
 }
 
 .odd-row {
-    background-color: #f2f2f2 !important;
+	background-color: #f2f2f2 !important;
 }
 
 .legend {
-    float: right;
-    display: inline-block;
-    line-height: 18px;
-    padding: 10px 0;
+	float: right;
+	display: inline-block;
+	line-height: 18px;
+	padding: 10px 0;
 }
