@@ -40,7 +40,8 @@ const Sidebar = (props) => {
 						boxSizing: "border-box",
 					},
 				}}
-				style={{ zIndex: "-1" }}>
+				// style={{ zIndex: "-1" }}
+			>
 				<Toolbar />
 				<Box sx={{ overflow: "auto" }}>
 					<Typography variant="h5" className="sidebar-header">

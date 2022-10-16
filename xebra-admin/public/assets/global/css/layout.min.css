@@ -3028,6 +3028,7 @@
 	padding: 8px 20px 5px;
 	font-size: 13px;
 	height: 33px;
+	z-index: 9999999;
 }
 .page-footer:after,
 .page-footer:before {
@@ -3042,7 +3043,7 @@
 	position: fixed;
 	left: 0;
 	right: 0;
-	z-index: 10000;
+	z-index: 1000000;
 	bottom: 0;
 }
 .page-footer-fixed.page-footer-fixed-mobile.page-sidebar-fixed .page-footer {
@@ -3056,7 +3057,7 @@
 		position: fixed;
 		left: 0;
 		right: 0;
-		z-index: 10000;
+		z-index: 1000000;
 		bottom: 0;
 	}
 	.page-sidebar-fixed.page-sidebar-closed .page-footer {
@@ -3333,7 +3334,7 @@
 }
 .page-portlet-fullscreen .page-quick-sidebar-toggler,
 .page-portlet-fullscreen .page-quick-sidebar-wrapper {
-	z-index: -1;
+	/* z-index: -1; */
 }
 .page-quick-sidebar-toggler {
 	overflow: hidden;

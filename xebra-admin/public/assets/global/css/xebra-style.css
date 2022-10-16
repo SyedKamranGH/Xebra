@@ -6,7 +6,7 @@
 .page-sidebar-menu.page-header-fixed {
 	padding-top: 20px;
 	background-color: #364150;
-	z-index: -1;
+	/* z-index: -1; */
 }
 
 .page-content {

@@ -1,10 +1,25 @@
-import { Card, Divider, Grid, Paper, Stack, Typography } from "@mui/material";
+import {
+	Card,
+	Divider,
+	Grid,
+	InputAdornment,
+	Paper,
+	Stack,
+	TextField,
+	Typography,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
+import "react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit.min.css";
+import paginationFactory from "react-bootstrap-table2-paginator";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+// import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 
 const Table = () => {
+	// const { SearchBar } = Search;
+
 	const actionItems = () => {
 		return (
 			<>
@@ -168,46 +183,121 @@ const Table = () => {
 			enabled: "Enabled",
 			actions: "",
 		},
+		{
+			id: 4,
+			name: "luffy",
+			email: "luffy@wono.com",
+			certs: "Cinnamon",
+			history: "Latin",
+			referral: "DJ",
+			dateAdded: "09-01-2022 10:39 am",
+			lastModified: "09-23-2022 11:00 am",
+			status: "Active",
+			enabled: "Enabled",
+			actions: "",
+		},
+		{
+			id: 5,
+			name: "Zoro",
+			email: "zoro@wono.com",
+			certs: "Greens",
+			history: "Japan",
+			referral: "Straw hats",
+			dateAdded: "09-01-2022 10:36 am",
+			lastModified: "09-01-2022 10:36 am",
+			status: "Active",
+			enabled: "Enabled",
+			actions: "",
+		},
+		{
+			id: 6,
+			name: "Nami",
+			email: "nami@wono.com",
+			certs: "Orange",
+			history: "USA",
+			referral: "Straw hats",
+			dateAdded: "09-01-2022 10:21 am",
+			lastModified: "09-01-2022 10:21 am",
+			status: "Active",
+			enabled: "Enabled",
+			actions: "",
+		},
 	];
+
+	const pagination = paginationFactory({
+		page: 1,
+		sizePerPage: 3,
+		// lastPageText: "Last",
+		// firstPageText: "First",
+		// nextPageText: "Next",
+		// prePageText: "Previous",
+		showTotal: true,
+		// hideSizePerPage: true,
+		// alwaysShowAllBtns: false,
+		// withFirstAndLast: false,
+		// paginationTotalRenderer: customTotal,
+		onPageChange: function (page, sizePerPage) {
+			console.log("page", page);
+			console.log("sizePerPage", sizePerPage);
+		},
+		onSizePerPageChange: function (page, sizePerPage) {
+			console.log("page", page);
+			console.log("sizePerPage", sizePerPage);
+		},
+	});
+
 	return (
 		<>
-			{/* <Stack
-				spacing={4}
-				direction="column"
-				sx={{
-					marginLeft: "10px",
-					border: "1px solid",
-					backgroundColor: "white",
-				}}> */}
-			{/* <div className="row">
-				<div className="col-md-12"> */}
-			{/* BEGIN EXAMPLE TABLE PORTLET*/}
 			<div className="portlet light bordered">
-				<div className="portlet-title">
-					<div className="caption font-dark">
+				<Stack direction="column" spacing={2} className="portlet-title">
+					<Box className="caption font-dark">
 						<i className="fa fa-user" />
-						<span className="caption-subject bold uppercase">Users</span>
-					</div>
+						<Typography
+							display="flex"
+							className="caption-subject bold uppercase">
+							Users
+						</Typography>
+					</Box>
 					<Divider />
 
-					<div className="tools">
+					<Box className="tools">
 						<div className="portlet-body">
+							<Stack
+								direction="row"
+								spacing={1}
+								justifyContent="flex-end"
+								marginBottom={2}>
+								<Typography variant="h6">Search: </Typography>
+								<TextField
+									id="input-with-icon-textfield margin-dense"
+									// label="TextField"
+
+									// id="margin-dense"
+									margin="dense"
+									InputProps={{
+										startAdornment: (
+											<InputAdornment position="start">
+												{/* <AccountCircle /> */}
+												<SearchOutlinedIcon />
+											</InputAdornment>
+										),
+									}}
+									variant="standard"
+								/>
+							</Stack>
 							<BootstrapTable
 								keyField="id"
 								data={products}
 								columns={columns}
+								pagination={pagination}
 								headerClasses="heading"
 								className="table table-striped table-bordered table-hover"
 								id="mob_usrs_tbl"
 							/>
 						</div>
-					</div>
-				</div>
+					</Box>
+				</Stack>
 			</div>
-			{/* END EXAMPLE TABLE PORTLET*/}
-			{/* </div>
-			</div> */}
-			{/* </Stack> */}
 		</>
 	);
 };
