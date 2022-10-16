@@ -29,6 +29,10 @@ const UserManagement = () => {
 					</div>
 					{/* END LOGO */}
 					<Outlet />
+					<div class="copyright">
+						&copy; Xebra Portal By
+						<font color="#ff9900">Aztec Internet Solutions</font>
+					</div>
 				</ImageSlider>
 			</div>
 		</>
