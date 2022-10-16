@@ -3036,7 +3036,8 @@
 	display: table;
 }
 .page-footer .page-footer-inner {
-	float: left;
+	/* float: left; */
+	float: right;
 	display: inline-block;
 }
 .page-footer-fixed.page-footer-fixed-mobile .page-footer {

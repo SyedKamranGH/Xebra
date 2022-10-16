@@ -23,30 +23,32 @@ const Table = () => {
 	const actionItems = () => {
 		return (
 			<>
-				<button
-					name="edit-user-btn"
-					id="0"
-					type="button"
-					className="btn btn-circle btn-icon-only btn-default"
-					title="Edit">
-					<i className="fa fa-gears"></i>
-				</button>
-				<button
-					name="pause-user-btn"
-					data-uid="0"
-					type="button"
-					className="btn btn-circle btn-icon-only btn-default"
-					title="Resend">
-					<i className="fa fa-toggle-on"></i>
-				</button>
-				<button
-					name="resend-confirmation"
-					// id="0"
-					type="button"
-					className="btn btn-circle btn-icon-only btn-default"
-					title="Resend Confirmation">
-					<i className="fa fa-envelope"></i>
-				</button>
+				<Stack spacing={1} direction="column" justifyContent="center">
+					<button
+						name="edit-user-btn"
+						id="0"
+						type="button"
+						className="btn btn-circle btn-icon-only btn-default"
+						title="Edit">
+						<i className="fa fa-gears"></i>
+					</button>
+					<button
+						name="pause-user-btn"
+						data-uid="0"
+						type="button"
+						className="btn btn-circle btn-icon-only btn-default"
+						title="Resend">
+						<i className="fa fa-toggle-on"></i>
+					</button>
+					<button
+						name="resend-confirmation"
+						// id="0"
+						type="button"
+						className="btn btn-circle btn-icon-only btn-default"
+						title="Resend Confirmation">
+						<i className="fa fa-envelope"></i>
+					</button>
+				</Stack>
 			</>
 		);
 	};
@@ -91,55 +93,82 @@ const Table = () => {
 		{
 			dataField: "id",
 			text: "AMS360 #",
-			headerStyle: {
-				width: "6%",
-			},
 			sort: true,
+			// headerStyle: {
+			// 	width: "6%",
+			// },
 		},
 		{
 			dataField: "name",
 			text: "Name",
 			sort: true,
+			// headerStyle: {
+			// 	width: "6%",
+			// },
 		},
 		{
 			dataField: "certs",
 			text: "Certs",
 			formatter: certsItem,
+			// headerStyle: {
+			// 	width: "2%",
+			// },
 		},
 		{
 			dataField: "history",
 			text: "History",
 			formatter: historyItem,
+			// headerStyle: {
+			// 	width: "2%",
+			// },
 		},
 		{
 			dataField: "referral",
 			text: "Referral",
 			formatter: referralItem,
+			// headerStyle: {
+			// 	width: "6%",
+			// },
 		},
 		{
 			dataField: "dateAdded",
 			text: "Date Added",
 			sort: true,
+			// headerStyle: {
+			// 	width: "6%",
+			// },
 		},
 		{
 			dataField: "lastModified",
 			text: "Last Modified",
 			sort: true,
+			// headerStyle: {
+			// 	width: "6%",
+			// },
 		},
 		{
 			dataField: "status",
 			text: "Status",
 			sort: true,
+			// headerStyle: {
+			// 	width: "6%",
+			// },
 		},
 		{
 			dataField: "enabled",
 			text: "Enabled",
 			sort: true,
+			// headerStyle: {
+			// 	width: "3%",
+			// },
 		},
 		{
 			dataField: "actions",
 			text: "Actions",
 			formatter: actionItems,
+			// headerStyle: {
+			// 	width: "10%",
+			// },
 		},
 	];
 
@@ -267,7 +296,9 @@ const Table = () => {
 								spacing={1}
 								justifyContent="flex-end"
 								marginBottom={2}>
-								<Typography variant="h6">Search: </Typography>
+								<Typography variant="h6" paddingTop={1}>
+									Search:{" "}
+								</Typography>
 								<TextField
 									id="input-with-icon-textfield margin-dense"
 									// label="TextField"
@@ -282,7 +313,8 @@ const Table = () => {
 											</InputAdornment>
 										),
 									}}
-									variant="standard"
+									variant="outlined"
+									size="small"
 								/>
 							</Stack>
 							<BootstrapTable
