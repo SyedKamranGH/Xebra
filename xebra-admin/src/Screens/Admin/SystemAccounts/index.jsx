@@ -6,7 +6,6 @@ import Table from "../../../Components/Shared/Table/Index";
 const AdminSystemAccounts = () => {
 	return (
 		<>
-			Admin System Accounts
 			<SystemAccounts />
 		</>
 	);

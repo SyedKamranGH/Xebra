@@ -188,7 +188,7 @@ const BankBridge = () => {
 							paddingLeft: "20px",
 							marginTop: "60px",
 						}}>
-						<i class="fa fa-exchange"></i> &nbsp; BANK BRIDGE
+						<i class="fa fa-exchange">&nbsp; BANK BRIDGE</i>
 					</Typography>
 					<Paper elevation={1} style={{ marginLeft: 15 }}>
 						<Table columns={columns} products={products} expandRow={expandRow}>
