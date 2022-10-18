@@ -4,7 +4,9 @@ import UserManagement from "../../../Components/layouts/UserManagement";
 const Home = () => {
 	return (
 		<>
-			<h1>Home</h1>
+			<UserManagement>
+				<h1>Home</h1>
+			</UserManagement>
 		</>
 	);
 };

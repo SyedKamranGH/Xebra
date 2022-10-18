@@ -20,6 +20,7 @@ const Sidebar = (props) => {
 	const { isAdmin, menuItems } = props;
 	const [open, setOpen] = useState(false);
 	const location = useLocation();
+	const navigate = useNavigate();
 
 	return (
 		<>
@@ -57,9 +58,12 @@ const Sidebar = (props) => {
 									button
 									key={item.text}
 									className={location.pathname == item.path ? "active" : null}
-									onClick={() =>
-										console.log(`List button Click: history.push(${item.path})`)
-									}
+									onClick={() => {
+										console.log(
+											`List button Click: history.push(${item.path})`
+										);
+										navigate(item.path);
+									}}
 									sx={{ color: "#b4bcc8", fontSize: "20px" }}>
 									<ListItemIcon
 										className={item.icon}

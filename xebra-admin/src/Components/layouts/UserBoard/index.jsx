@@ -18,7 +18,7 @@ const UserLayout = () => {
 			text: "Bank Bridge",
 			// icon: <AccountBalanceOutlinedIcon />,
 			icon: "fa fa-bank",
-			path: "/",
+			path: "/user/bank",
 		},
 	];
 	return (

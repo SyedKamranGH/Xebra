@@ -12,25 +12,25 @@ const AdminLayout = (props) => {
 			text: "Mobile User",
 			// icon: <AdbIcon />,
 			icon: "fa fa-android",
-			path: "/",
+			path: "/admin",
 		},
 		{
 			text: "System Accounts",
 			// icon: <AccountBalanceOutlinedIcon />,
 			icon: "fa fa-database",
-			path: "/",
+			path: "/admin/accounts",
 		},
 		{
 			text: "Bank Bridge",
 			// icon: <AccountBalanceOutlinedIcon />,
 			icon: "fa fa-bank",
-			path: "/",
+			path: "/admin/bank",
 		},
 		{
 			text: "User Activity",
 			// icon: <AdbIcon />,
 			icon: "fa fa-users",
-			path: "/",
+			path: "/admin/activity",
 		},
 	];
 	return (

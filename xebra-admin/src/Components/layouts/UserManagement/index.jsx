@@ -16,7 +16,8 @@ import { CheckBox } from "@mui/icons-material";
 import ImageSlider from "../../Shared/ImageSlider";
 import { Outlet } from "react-router-dom";
 
-const UserManagement = () => {
+const UserManagement = (props) => {
+	const { children } = props;
 	return (
 		<>
 			<div className="containerStyle">
@@ -28,7 +29,8 @@ const UserManagement = () => {
 						</a>
 					</div>
 					{/* END LOGO */}
-					<Outlet />
+					{/* <Outlet /> */}
+					{children}
 					<div class="copyright">
 						&copy; Xebra Portal By
 						<font color="#ff9900">Aztec Internet Solutions</font>

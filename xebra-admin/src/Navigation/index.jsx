@@ -3,8 +3,11 @@ import { Routes, Route } from "react-router-dom";
 import AdminLayout from "../Components/layouts/AdminBoard";
 import UserLayout from "../Components/layouts/UserBoard";
 import UserManagement from "../Components/layouts/UserManagement";
+import AdminBankBridge from "../Screens/Admin/BankBridge";
 import AdminMobileUser from "../Screens/Admin/MobileUser";
 import AdminSystemAccounts from "../Screens/Admin/SystemAccounts";
+import AdminUserActivity from "../Screens/Admin/UserActivity";
+import UserBankBridge from "../Screens/User/BankBridge";
 import MobileUser from "../Screens/User/MobileUser";
 import ChangePassword from "../Screens/UserManagement/ChangePassword";
 import ForgotPassword from "../Screens/UserManagement/ForgotPassword";
@@ -15,19 +18,22 @@ import RestPassword from "../Screens/UserManagement/ResetPassword";
 const Navigation = () => {
 	return (
 		<Routes>
-			<Route path="/" element={<UserManagement />}>
-				<Route index element={<Home />} />
-				<Route path="login" element={<Login />} />
-				<Route path="forgotPassword" element={<ForgotPassword />} />
-				<Route path="restPassword" element={<RestPassword />} />
-				<Route path="changePassword" element={<ChangePassword />} />
-			</Route>
+			{/* <Route  element={<UserManagement />}> */}
+			{/* </Route> */}
+			<Route path="/" element={<Home />} />
+			<Route path="login" element={<Login />} />
+			<Route path="forgotPassword" element={<ForgotPassword />} />
+			<Route path="restPassword" element={<RestPassword />} />
+			<Route path="changePassword" element={<ChangePassword />} />
 			<Route path="admin" element={<AdminLayout />}>
 				<Route index element={<AdminMobileUser />} />
 				<Route path="accounts" element={<AdminSystemAccounts />} />
+				<Route path="bank" element={<AdminBankBridge />} />
+				<Route path="activity" element={<AdminUserActivity />} />
 			</Route>
 			<Route path="user" element={<UserLayout />}>
 				<Route index element={<MobileUser />} />
+				<Route path="bank" element={<UserBankBridge />} />
 			</Route>
 		</Routes>
 	);

@@ -3,6 +3,7 @@ import { Button, Paper, Stack, Typography } from "@mui/material";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import InputField from "../../../Components/Shared/InputField";
+import UserManagement from "../../../Components/layouts/UserManagement";
 
 const ChangePassword = () => {
 	const initialValues = {
@@ -14,7 +15,7 @@ const ChangePassword = () => {
 	});
 
 	return (
-		<>
+		<UserManagement>
 			<Paper
 				elevation={3}
 				variant="elevation"
@@ -92,7 +93,7 @@ const ChangePassword = () => {
 				</div>
 				{/* END LOGIN */}
 			</Paper>
-		</>
+		</UserManagement>
 	);
 };
 

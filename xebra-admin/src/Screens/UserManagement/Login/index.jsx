@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import InputField from "../../../Components/Shared/InputField";
 
 import "./style.css";
+import UserManagement from "../../../Components/layouts/UserManagement";
 
 const Login = () => {
 	const initialValues = {
@@ -17,7 +18,7 @@ const Login = () => {
 	});
 
 	return (
-		<>
+		<UserManagement>
 			<Paper
 				elevation={3}
 				variant="elevation"
@@ -111,7 +112,7 @@ const Login = () => {
 				</div>
 				{/* END LOGIN */}
 			</Paper>
-		</>
+		</UserManagement>
 	);
 };
 
