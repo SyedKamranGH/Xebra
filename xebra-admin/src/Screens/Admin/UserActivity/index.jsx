@@ -3,7 +3,6 @@ import UserActivity from "../../../Components/Shared/UserActivity";
 const AdminUserActivity = () => {
 	return (
 		<>
-			Admin User Activity
 			<UserActivity />
 		</>
 	);
