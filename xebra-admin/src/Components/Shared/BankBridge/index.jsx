@@ -87,6 +87,10 @@ const BankBridge = () => {
 	];
 	const expandRow = {
 		showExpandColumn: true,
+		onlyOneExpanding: true,
+		expandByColumnOnly: true,
+		// expandHeaderColumnRenderer:(() => {})
+
 		renderer: (row) => (
 			<div>
 				<Table

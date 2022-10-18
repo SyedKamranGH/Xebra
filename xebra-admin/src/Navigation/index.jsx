@@ -7,6 +7,7 @@ import AdminBankBridge from "../Screens/Admin/BankBridge";
 import AdminMobileUser from "../Screens/Admin/MobileUser";
 import AdminSystemAccounts from "../Screens/Admin/SystemAccounts";
 import AdminUserActivity from "../Screens/Admin/UserActivity";
+import AdminUserCertificates from "../Screens/Admin/UserCertificates";
 import UserBankBridge from "../Screens/User/BankBridge";
 import MobileUser from "../Screens/User/MobileUser";
 import ChangePassword from "../Screens/UserManagement/ChangePassword";
@@ -30,6 +31,10 @@ const Navigation = () => {
 				<Route path="accounts" element={<AdminSystemAccounts />} />
 				<Route path="bank" element={<AdminBankBridge />} />
 				<Route path="activity" element={<AdminUserActivity />} />
+				<Route
+					path="certs/:name/:asm/:email"
+					element={<AdminUserCertificates />}
+				/>
 			</Route>
 			<Route path="user" element={<UserLayout />}>
 				<Route index element={<MobileUser />} />

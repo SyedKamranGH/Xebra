@@ -11,9 +11,13 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import Table from "../Table/Index";
 
 const MobileUser = () => {
+	let { userCerts } = useParams();
+	const navigate = useNavigate();
+
 	const actionItems = () => {
 		return (
 			<>
@@ -49,11 +53,11 @@ const MobileUser = () => {
 	const certsItem = () => {
 		return (
 			<button
-				name="certs-user-btn"
-				// id="0"
+				title="Certs"
 				type="button"
-				className="btn btn-circle btn-icon-only btn-default"
-				title="Certs">
+				name="certs-user-btn"
+				// onClick={() => console.log("Button Click for certificates ")}
+				className="btn btn-circle btn-icon-only btn-default">
 				<i className="fa fa-search"></i>
 			</button>
 		);
@@ -88,9 +92,9 @@ const MobileUser = () => {
 			dataField: "id",
 			text: "AMS360 #",
 			sort: true,
-			// headerStyle: {
-			// 	width: "6%",
-			// },
+			headerStyle: {
+				width: "85px",
+			},
 		},
 		{
 			dataField: "name",
@@ -104,25 +108,36 @@ const MobileUser = () => {
 			dataField: "certs",
 			text: "Certs",
 			formatter: certsItem,
-			// headerStyle: {
-			// 	width: "2%",
-			// },
+			events: {
+				onClick: (e, column, columnIndex, row, rowIndex) => {
+					const user = {
+						name: row.name,
+						email: row.email,
+						ams: row.id,
+					};
+					console.log(userCerts);
+					navigate(`certs/${row.name}/${row.id}/${row.email}`);
+				},
+			},
+			headerStyle: {
+				width: "65px",
+			},
 		},
 		{
 			dataField: "history",
 			text: "History",
 			formatter: historyItem,
-			// headerStyle: {
-			// 	width: "2%",
-			// },
+			headerStyle: {
+				width: "65px",
+			},
 		},
 		{
 			dataField: "referral",
 			text: "Referral",
 			formatter: referralItem,
-			// headerStyle: {
-			// 	width: "6%",
-			// },
+			headerStyle: {
+				width: "65px",
+			},
 		},
 		{
 			dataField: "dateAdded",
@@ -160,9 +175,10 @@ const MobileUser = () => {
 			dataField: "actions",
 			text: "Actions",
 			formatter: actionItems,
-			// headerStyle: {
-			// 	width: "10%",
-			// },
+			align: "center",
+			headerStyle: {
+				width: "65px",
+			},
 		},
 	];
 
@@ -297,7 +313,7 @@ const MobileUser = () => {
 						</Button>
 					</Stack>
 
-					<Paper elevation={1} style={{ marginLeft: 15, width: "1340px" }}>
+					<Paper elevation={1} style={{ marginLeft: 15, width: "1140px" }}>
 						<Table columns={columns} products={products}>
 							<>
 								<Box className="caption font-dark">
