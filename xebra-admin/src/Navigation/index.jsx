@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import PageNotFound from "../Components/Errors/PageNotFound";
 import AdminLayout from "../Components/layouts/AdminBoard";
 import UserLayout from "../Components/layouts/UserBoard";
 import UserManagement from "../Components/layouts/UserManagement";
@@ -23,6 +24,7 @@ const Navigation = () => {
 		<Routes>
 			{/* <Route  element={<UserManagement />}> */}
 			{/* </Route> */}
+			<Route path="*" element={<PageNotFound />} />
 			<Route path="/" element={<Home />} />
 			<Route path="login" element={<Login />} />
 			<Route path="forgotPassword" element={<ForgotPassword />} />
