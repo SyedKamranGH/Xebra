@@ -110,12 +110,12 @@ const MobileUser = () => {
 			formatter: certsItem,
 			events: {
 				onClick: (e, column, columnIndex, row, rowIndex) => {
-					const user = {
-						name: row.name,
-						email: row.email,
-						ams: row.id,
-					};
-					console.log(userCerts);
+					// const user = {
+					// 	name: row.name,
+					// 	email: row.email,
+					// 	ams: row.id,
+					// };
+					// console.log(userCerts);
 					navigate(`certs/${row.name}/${row.id}/${row.email}`);
 				},
 			},

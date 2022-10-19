@@ -271,6 +271,11 @@ const UserCertificates = () => {
 						<Button
 							type="button"
 							variant="outlined"
+							onClick={() => {
+								// Note: Over laping paths from certs and editCerts
+								const pathName = location.pathname.replace("certs", "addCerts");
+								navigate(`${pathName}`);
+							}}
 							className="btn btn-outline btn-circle blue btn-sm"
 							data-toggle="modal">
 							Add new +

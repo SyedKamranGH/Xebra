@@ -8,6 +8,7 @@ import AdminMobileUser from "../Screens/Admin/MobileUser";
 import AdminSystemAccounts from "../Screens/Admin/SystemAccounts";
 import AdminUserActivity from "../Screens/Admin/UserActivity";
 import AdminUserCertificates from "../Screens/Admin/UserCertificates";
+import AdminAddNewCertificate from "../Screens/Admin/UserCertificates/AddNewCertificate";
 import AdminEditCertificate from "../Screens/Admin/UserCertificates/EditCertificate";
 import UserBankBridge from "../Screens/User/BankBridge";
 import MobileUser from "../Screens/User/MobileUser";
@@ -40,6 +41,10 @@ const Navigation = () => {
 				<Route
 					path="editCerts/:name/:asm/:email/:certNo"
 					element={<AdminEditCertificate />}
+				/>
+				<Route
+					path="addCerts/:name/:asm/:email"
+					element={<AdminAddNewCertificate />}
 				/>
 			</Route>
 			<Route path="user" element={<UserLayout />}>
