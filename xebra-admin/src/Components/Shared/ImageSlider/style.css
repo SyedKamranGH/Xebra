@@ -1,0 +1,41 @@
+.wrapper {
+	/* border: 3px solid red; */
+	/* width: 100vw; */
+	height: 100vh;
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	position: relative;
+}
+
+.slide {
+	height: 100%;
+	width: 100vw;
+	flex-shrink: 0;
+	/* border: 4px solid green; */
+
+	background-position: center;
+	background-size: cover;
+
+	transition: 750ms all ease-in-out;
+}
+
+.slideContainer {
+}
+
+.childrenWrapper {
+	position: absolute;
+	top: 10%;
+	left: 35%;
+	transform: translate(-50, -50);
+}
+
+.gradient {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.128);
+}
