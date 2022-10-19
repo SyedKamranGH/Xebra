@@ -62,14 +62,17 @@ const MobileUser = () => {
 			</button>
 		);
 	};
-	const historyItem = () => {
+	const historyItem = (cell, row) => {
 		return (
 			<button
-				name="history-user-btn"
-				// id="0"
 				type="button"
+				title="History"
+				name="history-user-btn"
 				className="btn btn-circle btn-icon-only btn-default"
-				title="History">
+				onClick={() => {
+					// console.log(row);
+					navigate(`history/${row.name}/${row.id}/${row.email}`);
+				}}>
 				<i className="fa fa-history"></i>
 			</button>
 		);
@@ -110,12 +113,6 @@ const MobileUser = () => {
 			formatter: certsItem,
 			events: {
 				onClick: (e, column, columnIndex, row, rowIndex) => {
-					// const user = {
-					// 	name: row.name,
-					// 	email: row.email,
-					// 	ams: row.id,
-					// };
-					// console.log(userCerts);
 					navigate(`certs/${row.name}/${row.id}/${row.email}`);
 				},
 			},

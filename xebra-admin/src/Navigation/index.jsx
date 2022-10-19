@@ -5,6 +5,7 @@ import AdminLayout from "../Components/layouts/AdminBoard";
 import UserLayout from "../Components/layouts/UserBoard";
 import UserManagement from "../Components/layouts/UserManagement";
 import AdminBankBridge from "../Screens/Admin/BankBridge";
+import AdminHistory from "../Screens/Admin/History";
 import AdminMobileUser from "../Screens/Admin/MobileUser";
 import AdminSystemAccounts from "../Screens/Admin/SystemAccounts";
 import AdminUserActivity from "../Screens/Admin/UserActivity";
@@ -37,9 +38,8 @@ const Navigation = () => {
 				<Route path="activity" element={<AdminUserActivity />} />
 				<Route
 					path="certs/:name/:asm/:email"
-					element={<AdminUserCertificates />}>
-					{/* <Route path=":certNo" element={<AdminEditCertificate />} /> */}
-				</Route>
+					element={<AdminUserCertificates />}
+				/>
 				<Route
 					path="editCerts/:name/:asm/:email/:certNo"
 					element={<AdminEditCertificate />}
@@ -48,6 +48,7 @@ const Navigation = () => {
 					path="addCerts/:name/:asm/:email"
 					element={<AdminAddNewCertificate />}
 				/>
+				<Route path="history/:name/:asm/:email" element={<AdminHistory />} />
 			</Route>
 			<Route path="user" element={<UserLayout />}>
 				<Route index element={<MobileUser />} />

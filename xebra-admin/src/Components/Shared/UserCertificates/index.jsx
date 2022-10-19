@@ -1,11 +1,6 @@
 import { Box, Button, Divider, Paper, Stack, Typography } from "@mui/material";
 import React from "react";
-import {
-	useNavigate,
-	useParams,
-	redirect,
-	useLocation,
-} from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import Table from "../Table/Index";
 
 const UserCertificates = () => {
