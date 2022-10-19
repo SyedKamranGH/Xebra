@@ -8,15 +8,22 @@ import {
 	Paper,
 	Stack,
 	Typography,
+	Box,
 } from "@mui/material";
-import { Box } from "@mui/system";
-import React from "react";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+// import { Box } from "@mui/system";
+import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Table from "../Table/Index";
+import NewMobileUserDialog from "../../Models/NewMobileUser";
 
 const MobileUser = () => {
 	let { userCerts } = useParams();
 	const navigate = useNavigate();
+	const [open, setOpen] = useState(false);
 
 	const actionItems = () => {
 		return (
@@ -91,6 +98,14 @@ const MobileUser = () => {
 				<i className="fa fa-user-plus"></i>
 			</button>
 		);
+	};
+
+	const handleClickOpen = () => {
+		setOpen(true);
+	};
+
+	const handleClose = () => {
+		setOpen(false);
 	};
 
 	const columns = [
@@ -295,6 +310,7 @@ const MobileUser = () => {
 							type="button"
 							variant="outlined"
 							className="btn btn-outline btn-circle blue btn-sm"
+							onClick={handleClickOpen}
 							data-toggle="modal">
 							Add new +
 						</Button>
@@ -328,6 +344,11 @@ const MobileUser = () => {
 						</Table>
 					</Paper>
 				</Stack>
+				<NewMobileUserDialog
+					// handleDelete={handleDelete}
+					handleClose={handleClose}
+					open={open}
+				/>
 			</Box>
 		</>
 	);
