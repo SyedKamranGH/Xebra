@@ -77,14 +77,17 @@ const MobileUser = () => {
 			</button>
 		);
 	};
-	const referralItem = () => {
+	const referralItem = (cell, row) => {
 		return (
 			<button
-				name="referral-user-btn"
-				// id="0"
 				type="button"
+				title="Referral"
+				name="referral-user-btn"
 				className="btn btn-circle btn-icon-only btn-default"
-				title="Referral">
+				onClick={() => {
+					// console.log(row);
+					navigate(`referral/${row.name}/${row.id}/${row.email}`);
+				}}>
 				<i className="fa fa-user-plus"></i>
 			</button>
 		);

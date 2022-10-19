@@ -7,6 +7,7 @@ import UserManagement from "../Components/layouts/UserManagement";
 import AdminBankBridge from "../Screens/Admin/BankBridge";
 import AdminHistory from "../Screens/Admin/History";
 import AdminMobileUser from "../Screens/Admin/MobileUser";
+import AdminReferralHistory from "../Screens/Admin/Referral";
 import AdminSystemAccounts from "../Screens/Admin/SystemAccounts";
 import AdminUserActivity from "../Screens/Admin/UserActivity";
 import AdminUserCertificates from "../Screens/Admin/UserCertificates";
@@ -49,6 +50,10 @@ const Navigation = () => {
 					element={<AdminAddNewCertificate />}
 				/>
 				<Route path="history/:name/:asm/:email" element={<AdminHistory />} />
+				<Route
+					path="referral/:name/:asm/:email"
+					element={<AdminReferralHistory />}
+				/>
 			</Route>
 			<Route path="user" element={<UserLayout />}>
 				<Route index element={<MobileUser />} />
