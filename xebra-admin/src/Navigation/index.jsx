@@ -8,6 +8,7 @@ import AdminMobileUser from "../Screens/Admin/MobileUser";
 import AdminSystemAccounts from "../Screens/Admin/SystemAccounts";
 import AdminUserActivity from "../Screens/Admin/UserActivity";
 import AdminUserCertificates from "../Screens/Admin/UserCertificates";
+import AdminEditCertificate from "../Screens/Admin/UserCertificates/EditCertificate";
 import UserBankBridge from "../Screens/User/BankBridge";
 import MobileUser from "../Screens/User/MobileUser";
 import ChangePassword from "../Screens/UserManagement/ChangePassword";
@@ -33,7 +34,12 @@ const Navigation = () => {
 				<Route path="activity" element={<AdminUserActivity />} />
 				<Route
 					path="certs/:name/:asm/:email"
-					element={<AdminUserCertificates />}
+					element={<AdminUserCertificates />}>
+					{/* <Route path=":certNo" element={<AdminEditCertificate />} /> */}
+				</Route>
+				<Route
+					path="editCerts/:name/:asm/:email/:certNo"
+					element={<AdminEditCertificate />}
 				/>
 			</Route>
 			<Route path="user" element={<UserLayout />}>

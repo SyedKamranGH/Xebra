@@ -1,11 +1,17 @@
 import { Box, Button, Divider, Paper, Stack, Typography } from "@mui/material";
-import { width } from "@mui/system";
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {
+	useNavigate,
+	useParams,
+	redirect,
+	useLocation,
+} from "react-router-dom";
 import Table from "../Table/Index";
 
 const UserCertificates = () => {
 	let { name, asm, email } = useParams();
+	const navigate = useNavigate();
+	const location = useLocation();
 
 	const actionItems = () => {
 		return (
@@ -40,7 +46,17 @@ const UserCertificates = () => {
 		);
 	};
 	const certsNo = (cell, row) => {
-		return <Button variant="outlined">{cell}</Button>;
+		return (
+			<Button
+				variant="outlined"
+				onClick={() => {
+					// Note: Over laping paths from certs and editCerts
+					const pathName = location.pathname.replace("certs", "editCerts");
+					navigate(`${pathName}/${cell}`);
+				}}>
+				{cell}
+			</Button>
+		);
 	};
 	const certsAction = () => {
 		return (

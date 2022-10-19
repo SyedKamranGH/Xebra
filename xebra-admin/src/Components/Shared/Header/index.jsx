@@ -1,6 +1,6 @@
 import { AppBar, Toolbar } from "@mui/material";
 import React from "react";
-
+// import SGI_LOGO_wht from "../../../assets/SGI_LOGO_wht.jpg";
 const Header = () => {
 	return (
 		<>
@@ -20,6 +20,7 @@ const Header = () => {
 					<div className="page-logo">
 						<img
 							src="images/SGI_LOGO_wht.png"
+							// src={SGI_LOGO_wht}
 							alt="logo"
 							className="company-logo-default"
 						/>
