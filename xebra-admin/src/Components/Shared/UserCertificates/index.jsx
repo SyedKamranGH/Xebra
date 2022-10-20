@@ -1,6 +1,7 @@
 import { Box, Button, Divider, Paper, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
+import DeleteCertificateDialogBox from "../../Models/DeleteCertificate";
 import NewHolder from "../../Models/NewHolder";
 import Table from "../Table/Index";
 
@@ -9,8 +10,9 @@ const UserCertificates = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 
+	const [deleteCertsNo, setDeleteCertsNo] = useState();
 	const [open, setOpen] = useState(false);
-	const [openEdit, setOpenEdit] = useState(false);
+	const [openDeleteCerts, setOpenDeleteCerts] = useState(false);
 
 	const actionItems = () => {
 		return (
@@ -57,13 +59,19 @@ const UserCertificates = () => {
 			</Button>
 		);
 	};
-	const certsAction = () => {
+	const certsAction = (cell, row) => {
 		return (
 			<Stack spacing={1} direction="row">
 				<Button variant="outlined" onClick={handleClickOpen}>
 					Add Holder
 				</Button>
-				<Button variant="outlined" color="error">
+				<Button
+					variant="outlined"
+					color="error"
+					onClick={() => {
+						setDeleteCertsNo(row.certsNo);
+						handleClickOpenDeleteCerts();
+					}}>
 					Delete Holder
 				</Button>
 			</Stack>
@@ -77,12 +85,12 @@ const UserCertificates = () => {
 	const handleClose = () => {
 		setOpen(false);
 	};
-	const handleClickOpenEdit = () => {
-		setOpenEdit(true);
+	const handleClickOpenDeleteCerts = () => {
+		setOpenDeleteCerts(true);
 	};
 
-	const handleCloseEdit = () => {
-		setOpenEdit(false);
+	const handleCloseDeleteCerts = () => {
+		setOpenDeleteCerts(false);
 	};
 
 	const subColumns = [
@@ -314,6 +322,11 @@ const UserCertificates = () => {
 					</Paper>
 				</Stack>
 				<NewHolder handleClose={handleClose} open={open} />
+				<DeleteCertificateDialogBox
+					handleClose={handleCloseDeleteCerts}
+					open={openDeleteCerts}
+					certNo={deleteCertsNo}
+				/>
 			</Box>
 		</>
 	);
