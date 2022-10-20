@@ -2,6 +2,7 @@ import { Box, Button, Divider, Paper, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import DeleteCertificateDialogBox from "../../Models/DeleteCertificate";
+import DeleteHolderDialogBox from "../../Models/DeleteHolder";
 import NewHolder from "../../Models/NewHolder";
 import Table from "../Table/Index";
 
@@ -11,10 +12,12 @@ const UserCertificates = () => {
 	const location = useLocation();
 
 	const [deleteCertsNo, setDeleteCertsNo] = useState();
+	const [deleteHolder, setDeleteHolder] = useState();
 	const [open, setOpen] = useState(false);
 	const [openDeleteCerts, setOpenDeleteCerts] = useState(false);
+	const [openDeleteHolder, setOpenDeleteHolder] = useState(false);
 
-	const actionItems = () => {
+	const actionItems = (cell, row) => {
 		return (
 			<>
 				<Stack spacing={1} direction="row" justifyContent="center">
@@ -35,11 +38,16 @@ const UserCertificates = () => {
 						<i className="fa fa-envelope"></i>
 					</button>
 					<button
-						name="resend-confirmation"
+						name="delete-holder"
 						// id="0"
 						type="button"
 						className="btn btn-circle btn-icon-only btn-default"
-						title="Resend Confirmation">
+						title="Delete Holder"
+						onClick={() => {
+							console.log(row.holder);
+							setDeleteHolder(row.holder);
+							handleClickOpenDeleteHolder();
+						}}>
 						<i className="fa fa-trash"></i>
 					</button>
 				</Stack>
@@ -85,10 +93,15 @@ const UserCertificates = () => {
 	const handleClose = () => {
 		setOpen(false);
 	};
+	const handleClickOpenDeleteHolder = () => {
+		setOpenDeleteHolder(true);
+	};
+	const handleCloseDeleteHolder = () => {
+		setOpenDeleteHolder(false);
+	};
 	const handleClickOpenDeleteCerts = () => {
 		setOpenDeleteCerts(true);
 	};
-
 	const handleCloseDeleteCerts = () => {
 		setOpenDeleteCerts(false);
 	};
@@ -326,6 +339,11 @@ const UserCertificates = () => {
 					handleClose={handleCloseDeleteCerts}
 					open={openDeleteCerts}
 					certNo={deleteCertsNo}
+				/>
+				<DeleteHolderDialogBox
+					handleClose={handleCloseDeleteHolder}
+					open={openDeleteHolder}
+					holder={deleteHolder}
 				/>
 			</Box>
 		</>
