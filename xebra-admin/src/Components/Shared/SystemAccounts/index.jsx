@@ -1,18 +1,24 @@
 import { Box, Button, Divider, Paper, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import EditSystemUser from "../../Models/EditSystemUser";
+import NewSystemUserDialogBox from "../../Models/NewSystemUser";
 import Table from "../Table/Index";
 
 const SystemAccounts = () => {
+	const [open, setOpen] = useState(false);
+	const [openEdit, setOpenEdit] = useState(false);
+
 	const actionItems = () => {
 		return (
 			<>
 				<Stack spacing={1} direction="column" justifyContent="center">
 					<button
-						name="edit-user-btn"
 						id="0"
+						title="Edit"
 						type="button"
+						name="edit-user-btn"
 						className="btn btn-circle btn-icon-only btn-default"
-						title="Edit">
+						onClick={handleClickOpenEdit}>
 						<i className="fa fa-gears"></i>
 					</button>
 					<button
@@ -35,6 +41,22 @@ const SystemAccounts = () => {
 			</>
 		);
 	};
+
+	const handleClickOpen = () => {
+		setOpen(true);
+	};
+
+	const handleClose = () => {
+		setOpen(false);
+	};
+	const handleClickOpenEdit = () => {
+		setOpenEdit(true);
+	};
+
+	const handleCloseEdit = () => {
+		setOpenEdit(false);
+	};
+
 	const columns = [
 		{
 			dataField: "group",
@@ -208,6 +230,7 @@ const SystemAccounts = () => {
 						<Button
 							type="button"
 							variant="outlined"
+							onClick={handleClickOpen}
 							className="btn btn-outline btn-circle blue btn-sm"
 							data-toggle="modal">
 							Add new +
@@ -229,6 +252,8 @@ const SystemAccounts = () => {
 						</Table>
 					</Paper>
 				</Stack>
+				<NewSystemUserDialogBox handleClose={handleClose} open={open} />
+				<EditSystemUser handleClose={handleCloseEdit} open={openEdit} />
 			</Box>
 		</>
 	);

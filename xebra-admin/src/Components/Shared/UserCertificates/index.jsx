@@ -1,12 +1,16 @@
 import { Box, Button, Divider, Paper, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
+import NewHolder from "../../Models/NewHolder";
 import Table from "../Table/Index";
 
 const UserCertificates = () => {
 	let { name, asm, email } = useParams();
 	const navigate = useNavigate();
 	const location = useLocation();
+
+	const [open, setOpen] = useState(false);
+	const [openEdit, setOpenEdit] = useState(false);
 
 	const actionItems = () => {
 		return (
@@ -56,13 +60,31 @@ const UserCertificates = () => {
 	const certsAction = () => {
 		return (
 			<Stack spacing={1} direction="row">
-				<Button variant="outlined">Add Holder</Button>
+				<Button variant="outlined" onClick={handleClickOpen}>
+					Add Holder
+				</Button>
 				<Button variant="outlined" color="error">
 					Delete Holder
 				</Button>
 			</Stack>
 		);
 	};
+
+	const handleClickOpen = () => {
+		setOpen(true);
+	};
+
+	const handleClose = () => {
+		setOpen(false);
+	};
+	const handleClickOpenEdit = () => {
+		setOpenEdit(true);
+	};
+
+	const handleCloseEdit = () => {
+		setOpenEdit(false);
+	};
+
 	const subColumns = [
 		{
 			dataField: "holder",
@@ -291,6 +313,7 @@ const UserCertificates = () => {
 						</Table>
 					</Paper>
 				</Stack>
+				<NewHolder handleClose={handleClose} open={open} />
 			</Box>
 		</>
 	);

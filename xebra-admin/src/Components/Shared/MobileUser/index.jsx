@@ -19,22 +19,25 @@ import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Table from "../Table/Index";
 import NewMobileUserDialog from "../../Models/NewMobileUser";
+import EditMobileUserDialog from "../../Models/EditMobileUser";
 
 const MobileUser = () => {
 	let { userCerts } = useParams();
 	const navigate = useNavigate();
 	const [open, setOpen] = useState(false);
+	const [openEdit, setOpenEdit] = useState(false);
 
 	const actionItems = () => {
 		return (
 			<>
 				<Stack spacing={1} direction="column" justifyContent="center">
 					<button
-						name="edit-user-btn"
 						id="0"
+						title="Edit"
 						type="button"
+						name="edit-user-btn"
 						className="btn btn-circle btn-icon-only btn-default"
-						title="Edit">
+						onClick={handleClickOpenEdit}>
 						<i className="fa fa-gears"></i>
 					</button>
 					<button
@@ -106,6 +109,13 @@ const MobileUser = () => {
 
 	const handleClose = () => {
 		setOpen(false);
+	};
+	const handleClickOpenEdit = () => {
+		setOpenEdit(true);
+	};
+
+	const handleCloseEdit = () => {
+		setOpenEdit(false);
 	};
 
 	const columns = [
@@ -349,6 +359,7 @@ const MobileUser = () => {
 					handleClose={handleClose}
 					open={open}
 				/>
+				<EditMobileUserDialog handleClose={handleCloseEdit} open={openEdit} />
 			</Box>
 		</>
 	);

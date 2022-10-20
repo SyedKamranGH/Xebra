@@ -6,7 +6,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
-const NewMobileUser = ({ open, handleClose }) => {
+const EditMobileUser = ({ open, handleClose }) => {
 	return (
 		<>
 			<Dialog
@@ -15,225 +15,259 @@ const NewMobileUser = ({ open, handleClose }) => {
 				aria-labelledby="alert-dialog-title"
 				aria-describedby="alert-dialog-description"
 				style={{ top: "7%" }}>
-				<DialogTitle id="alert-dialog-title">NEW MOBILE USER</DialogTitle>
+				<DialogTitle id="alert-dialog-title">EDIT MOBILE USER</DialogTitle>
 				<DialogContent>
-					<div class="portlet-body form">
-						<form id="new-mob-user-form" class="form-horizontal" role="form">
-							<div class="form-body">
-								<div class="form-group">
-									<label class="col-md-3 control-label">Group</label>
-									<div class="col-md-9">
+					<>
+						<form
+							id="edit-mob-user-form"
+							className="form-horizontal"
+							role="form">
+							<div className="form-body">
+								<div className="form-group">
+									<label className="col-md-3 control-label">Group</label>
+									<div className="col-md-9">
 										<select
 											name="group_name"
-											id="group_name"
-											class="form-control">
+											id="group_name_edit"
+											className="form-control"
+											readOnly>
 											<option>Mobile User</option>
 										</select>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">Username/Email</label>
-									<div class="col-md-9">
-										<div class="input-group">
-											<span class="input-group-addon">
-												<i class="fa fa-envelope"></i>
+								<div className="form-group">
+									<label className="col-md-3 control-label">
+										Username/Email
+									</label>
+									<div className="col-md-9">
+										<div className="input-group">
+											<span className="input-group-addon">
+												<i className="fa fa-envelope" />
 											</span>
 											<input
 												type="email"
-												id="email"
-												name="email"
-												class="form-control"
+												name="email_edit"
+												id="email_edit"
+												defaultValue
+												className="form-control"
+												placeholder="Email Address"
+												required
+											/>
+											<input
+												type="hidden"
+												name="current_email_edit"
+												id="current_email_edit"
+												defaultValue
+												className="form-control"
 												placeholder="Email Address"
 												required
 											/>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">Mobile Phone</label>
-									<div class="col-md-9">
-										<div class="input-group">
-											<span class="input-group-addon">
-												<i class="fa fa-phone"></i>
+								<div className="form-group">
+									<label className="col-md-3 control-label">Mobile Phone</label>
+									<div className="col-md-9">
+										<div className="input-group">
+											<span className="input-group-addon">
+												<i className="fa fa-phone" />
 											</span>
 											<input
 												type="tel"
 												data-inputmask="'mask': '(999) 999-9999'"
-												pattern="^\(\d{3}\) \d{3}-\d{4}$"
-												id="mobile_phone"
 												name="money-inputmask"
-												class="form-control"
+												id="mobile_phone_edit"
+												pattern="^\(\d{3}\) \d{3}-\d{4}$"
+												defaultValue
+												className="form-control"
 												placeholder="Mobile Phone"
 												required
 											/>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">AMS360 Account #</label>
-									<div class="col-md-9">
-										<div class="input-group">
-											<span class="input-group-addon">
-												<i class="fa fa-file-text-o"></i>
+								<div className="form-group">
+									<label className="col-md-3 control-label">
+										AMS360 Account No.
+									</label>
+									<div className="col-md-9">
+										<div className="input-group">
+											<span className="input-group-addon">
+												<i className="fa fa-file-text-o" />
 											</span>
 											<input
 												type="text"
-												id="amsno"
 												name="amsno"
+												id="amsno_edit"
 												pattern="^[0-9]*$"
-												class="form-control"
-												placeholder="(Example: 10297)"
+												defaultValue
+												className="form-control"
+												placeholder="AMS360 Number (Example: 10297)"
 												required
 											/>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">General Agent</label>
-									<div class="col-md-9">
-										<label class="mt-checkbox">
+								<div className="form-group">
+									<label className="col-md-3 control-label">
+										General Agent
+									</label>
+									<div className="col-md-9">
+										<label className="mt-checkbox">
 											<input
 												type="checkbox"
-												name="is_schuberg"
-												id="is_schuberg"
+												name="is_schuberg_edit"
+												id="is_schuberg_edit"
 											/>
 											Schuberg
-											<span></span>
+											<span />
 										</label>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">Company type</label>
-									<div class="col-md-9">
-										<label class="mt-checkbox">
-											<input type="checkbox" name="is_dba" id="is_dba" />
+								<div className="form-group">
+									<label className="col-md-3 control-label">Company type</label>
+									<div className="col-md-9">
+										<label className="mt-checkbox">
+											<input
+												type="checkbox"
+												name="is_dba_edit"
+												id="is_dba_edit"
+											/>
 											Company is a DBA
-											<span></span>
+											<span />
 										</label>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">Company name</label>
-									<div class="col-md-9">
-										<div class="input-group">
-											<span class="input-group-addon">
-												<i class="fa fa-building"></i>
+								<div className="form-group">
+									<label className="col-md-3 control-label">Company name</label>
+									<div className="col-md-9">
+										<div className="input-group">
+											<span className="input-group-addon">
+												<i className="fa fa-building" />
 											</span>
 											<input
 												type="text"
-												id="company"
 												name="company"
-												class="form-control"
+												id="company_edit"
+												defaultValue
+												className="form-control"
 												placeholder="Company Name"
 											/>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">First name</label>
-									<div class="col-md-9">
-										<div class="input-group">
-											<span class="input-group-addon">
-												<i class="fa fa-user"></i>
+								<div className="form-group">
+									<label className="col-md-3 control-label">First name</label>
+									<div className="col-md-9">
+										<div className="input-group">
+											<span className="input-group-addon">
+												<i className="fa fa-user" />
 											</span>
 											<input
 												type="text"
-												id="given_name"
 												name="given_name"
+												id="given_name_edit"
+												defaultValue
 												pattern="^[.&0-9A-Za-z -]+$"
-												class="form-control"
+												className="form-control"
 												placeholder="First Name"
 												required
 											/>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">Middle name</label>
-									<div class="col-md-9">
-										<div class="input-group">
-											<span class="input-group-addon">
-												<i class="fa fa-user"></i>
+								<div className="form-group">
+									<label className="col-md-3 control-label">Middle name</label>
+									<div className="col-md-9">
+										<div className="input-group">
+											<span className="input-group-addon">
+												<i className="fa fa-user" />
 											</span>
 											<input
 												type="text"
-												id="middle_name"
 												name="middle_name"
+												id="middle_name_edit"
 												pattern="^[&0-9A-Za-z -]+$"
-												class="form-control"
+												defaultValue
+												className="form-control"
 												placeholder="Middle Name"
 											/>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">Last name</label>
-									<div class="col-md-9">
-										<div class="input-group">
-											<span class="input-group-addon">
-												<i class="fa fa-user"></i>
+								<div className="form-group">
+									<label className="col-md-3 control-label">Last name</label>
+									<div className="col-md-9">
+										<div className="input-group">
+											<span className="input-group-addon">
+												<i className="fa fa-user" />
 											</span>
 											<input
 												type="text"
-												id="family_name"
 												name="family_name"
+												id="family_name_edit"
 												pattern="^[&0-9A-Za-z -]+$"
-												class="form-control"
+												defaultValue
+												className="form-control"
 												placeholder="Last Name"
 												required
 											/>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">Street number</label>
-									<div class="col-md-9">
-										<div class="input-group">
-											<span class="input-group-addon">
-												<i class="fa fa-home"></i>
+								<div className="form-group">
+									<label className="col-md-3 control-label">
+										Street number
+									</label>
+									<div className="col-md-9">
+										<div className="input-group">
+											<span className="input-group-addon">
+												<i className="fa fa-home" />
 											</span>
 											<input
 												type="text"
-												id="address_street"
 												name="address_street"
-												class="form-control"
+												id="address_street_edit"
+												defaultValue
+												className="form-control"
 												placeholder="Street number"
 												required
 											/>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">City</label>
-									<div class="col-md-9">
-										<div class="input-group">
-											<span class="input-group-addon">
-												<i class="fa fa-home"></i>
+								<div className="form-group">
+									<label className="col-md-3 control-label">City</label>
+									<div className="col-md-9">
+										<div className="input-group">
+											<span className="input-group-addon">
+												<i className="fa fa-home" />
 											</span>
 											<input
 												type="text"
-												id="address_city"
 												name="address_city"
-												class="form-control"
+												id="address_city_edit"
+												defaultValue
+												className="form-control"
 												placeholder="City"
 												required
 											/>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-									<label for="state" class="col-md-3 control-label">
+								<div className="form-group">
+									<label htmlFor="state" className="col-md-3 control-label">
 										State
 									</label>
-									<div class="col-sm-9">
-										<div class="input-group">
-											<span class="input-group-addon">
-												<i class="fa fa-home"></i>
+									<div className="col-sm-9">
+										<div className="input-group">
+											<span className="input-group-addon">
+												<i className="fa fa-home" />
 											</span>
 											<select
-												class="form-control"
-												id="address_state"
+												className="form-control"
 												name="address_state"
+												id="address_state_edit"
 												required>
 												<option value="AK">Alaska</option>
 												<option value="AL">Alabama</option>
@@ -291,19 +325,20 @@ const NewMobileUser = ({ open, handleClose }) => {
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-md-3 control-label">Zip code</label>
-									<div class="col-md-9">
-										<div class="input-group">
-											<span class="input-group-addon">
-												<i class="fa fa-home"></i>
+								<div className="form-group">
+									<label className="col-md-3 control-label">Zip code</label>
+									<div className="col-md-9">
+										<div className="input-group">
+											<span className="input-group-addon">
+												<i className="fa fa-home" />
 											</span>
 											<input
 												type="text"
-												id="address_zipcode"
 												name="address_zipcode"
+												id="address_zipcode_edit"
 												pattern="^\d{5}$"
-												class="form-control"
+												defaultValue
+												className="form-control"
 												placeholder="Zip code"
 												required
 											/>
@@ -311,44 +346,15 @@ const NewMobileUser = ({ open, handleClose }) => {
 									</div>
 								</div>
 							</div>
-							<div class="form-actions">
-								<div class="row">
-									<div class="col-md-offset-3 col-md-9">
-										<button
-											id="new-mob-user-form-btn-submit"
-											type="submit"
-											class="btn blue"
-											data-loading-text="<i class='fa fa-spinner fa-spin '></i> Creating User...">
-											Submit
-										</button>
-										<button
-											id="new-mob-user-form-btn-cancel"
-											type="button"
-											data-dismiss="modal"
-											class="btn dark btn-outline">
-											Close
-										</button>
-										<button
-											id="new-mob-user-form-btn-reset"
-											type="reset"
-											class="btn blue">
-											Reset
-										</button>
-									</div>
-								</div>
-							</div>
 						</form>
-					</div>
+					</>
 				</DialogContent>
 				<DialogActions>
 					<Button variant="contained" onClick={handleClose} autoFocus>
-						Submit
+						Update
 					</Button>
 					<Button variant="outlined" onClick={handleClose}>
 						Close
-					</Button>
-					<Button variant="contained" onClick={handleClose}>
-						Reset
 					</Button>
 				</DialogActions>
 			</Dialog>
@@ -356,4 +362,4 @@ const NewMobileUser = ({ open, handleClose }) => {
 	);
 };
 
-export default NewMobileUser;
+export default EditMobileUser;
