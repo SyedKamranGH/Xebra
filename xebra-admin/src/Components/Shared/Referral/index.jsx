@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Table from "../Table/Index";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { Box, Button, Divider, Paper, Stack, Typography } from "@mui/material";
+import NewUserReferral from "../../Models/NewUserReferral";
 
 const ReferralHistory = () => {
 	let { name, asm, email } = useParams();
+	const [open, setOpen] = useState(false);
+
+	const handleClickOpen = () => {
+		setOpen(true);
+	};
+
+	const handleClose = () => {
+		setOpen(false);
+	};
 
 	const columns = [
 		{
@@ -185,6 +195,7 @@ const ReferralHistory = () => {
 							type="button"
 							variant="outlined"
 							className="btn btn-outline btn-circle blue btn-sm"
+							onClick={handleClickOpen}
 							data-toggle="modal">
 							Add new +
 						</Button>
@@ -204,6 +215,7 @@ const ReferralHistory = () => {
 						</Table>
 					</Paper>
 				</Stack>
+				<NewUserReferral handleClose={handleClose} open={open} />
 			</Box>
 		</>
 	);
